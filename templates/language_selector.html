@@ -1,0 +1,8 @@
+<form action="{{ url_for('set_language') }}" method="get">
+  <label for="language">{{ _("Idioma") }}</label>
+  <select id="language" name="language" onchange="this.form.submit()">
+    <option value="pt_BR" {{ "selected" if get_locale().language == "pt" }}>{{ _("Português") }}</option>
+    <option value="en" {{ "selected" if get_locale().language == "en" }}>English</option>
+  </select>
+  <input type="hidden" name="next" value="{{ request.path }}">
+</form>

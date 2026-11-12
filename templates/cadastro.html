@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ 'pt-BR' if get_locale().language == 'pt' else 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ _("Cadastro de Itens") }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  {% include "language_selector.html" %}
+  <h2>{{ _("Cadastrar Item") }}</h2>
+
+  <form id="form-cadastro" method="post" novalidate>
+    {{ form.hidden_tag() }}
+
+    <label>{{ form.nome.label.text }}</label>
+    {{ form.nome(id="nome") }}
+    <div class="erro-campo" id="erro-nome"></div>
+
+    <label>{{ form.quantidade.label.text }}</label>
+    {{ form.quantidade(id="quantidade") }}
+    <div class="erro-campo" id="erro-quantidade"></div>
+
+    <label>{{ form.valor.label.text }}</label>
+    {{ form.valor(id="valor") }}
+    <div class="erro-campo" id="erro-valor"></div>
+
+    {{ form.submit(id="btn-cadastrar") }}
+  </form>
+
+  <div id="mensagem"></div>
+  <a href="{{ url_for('pagina_consulta') }}">{{ _("Ir para Consulta →") }}</a>
+
+  <script src="{{ url_for('babel_catalog') }}"></script>
+  <script src="{{ url_for('static', filename='js/cadastro.js') }}"></script>
+</body>
+</html>

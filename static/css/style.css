@@ -1,0 +1,11 @@
+body { font-family: Arial, sans-serif; max-width: 480px; margin: 40px auto; }
+label { display: block; margin-top: 12px; font-weight: bold; }
+input[type="text"], input[type="number"] {
+  width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box;
+}
+button { margin-top: 16px; padding: 10px 20px; cursor: pointer; }
+.msg { margin-top: 12px; padding: 8px; border-radius: 4px; }
+.ok  { background: #d4edda; color: #155724; }
+.err { background: #f8d7da; color: #721c24; }
+a { display: inline-block; margin-top: 20px; }
+.erro-campo { color: #721c24; font-size: 0.9em; }
